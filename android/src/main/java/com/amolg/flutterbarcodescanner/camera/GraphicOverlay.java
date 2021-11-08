@@ -170,20 +170,20 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
         line.setColor(lineColor);
         line.setStrokeWidth(Float.valueOf(lineWidth));
 
-        // draw the line to product animation
-        if (endY >= top + AppUtil.dpToPx(getContext(), rectHeight) + frames) {
-            revAnimation = true;
-        } else if (endY == top + frames) {
-            revAnimation = false;
-        }
+        // // draw the line to product animation
+        // if (endY >= top + AppUtil.dpToPx(getContext(), rectHeight) + frames) {
+        //     revAnimation = true;
+        // } else if (endY == top + frames) {
+        //     revAnimation = false;
+        // }
 
-        // check if the line has reached to bottom
-        if (revAnimation) {
-            endY -= frames;
-        } else {
-            endY += frames;
-        }
-        canvas.drawLine(left, endY, left + AppUtil.dpToPx(getContext(), rectWidth), endY, line);
+        // // check if the line has reached to bottom
+        // if (revAnimation) {
+        //     endY -= frames;
+        // } else {
+        //     endY += frames;
+        // }
+        canvas.drawLine(left+50, top + AppUtil.dpToPx(getContext(), rectHeight/2), left + AppUtil.dpToPx(getContext(), rectWidth)-50, top + AppUtil.dpToPx(getContext(), rectHeight/2), line);
         invalidate();
     }
 }
